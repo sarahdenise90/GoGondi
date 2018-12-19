@@ -1,14 +1,31 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      GoGondi
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+
+   
+<ion-list>
+    <ion-item *ngFor="let object of objects">
+      {{object.name}}
+        <button (click)="toOther(object)" ion-button clear item-end>
+                <ion-icon name="arrow-forward"></ion-icon>
+        </button>
+        
+    </ion-item>
+  </ion-list>
+
+
+
 </ion-content>
+  
+<ion-fab bottom right>
+  <button (click)= "openModal()" ion-fab color="primary">+</button>
+</ion-fab>
+
+
+

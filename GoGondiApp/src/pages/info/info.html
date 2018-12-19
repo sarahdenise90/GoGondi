@@ -1,0 +1,59 @@
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.51.0/mapbox-gl.js'></script>
+<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.51.0/mapbox-gl.css' rel='stylesheet' />
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{store.name}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+    <ion-card>
+      <div id="map"></div>
+      <ion-card-content>
+      <ion-card-title>
+        {{object.name}}
+      </ion-card-title>
+              <ion-row>
+                <ion-col col-1>
+                  <ion-icon name="map"></ion-icon>
+                </ion-col>
+                <ion-col col-11>
+                  {{object.address}}
+                </ion-col>
+              </ion-row>
+              </ion-card-content>
+              <ion-row>
+                <ion-col align-self-center text-center>
+                  <ion-note>
+                    {{object.category}}
+                  </ion-note>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                  <ion-col align-self-center text-center>
+                      <button (click)= "openModal()" color="primary">Add Comment</button>
+                  </ion-col>
+                </ion-row>
+               </ion-card> 
+
+               <ion-card>
+                  <ion-card-content>
+                  <ion-card-title>
+                    Comments
+                  </ion-card-title>
+                          <ion-row *ngFor="let comment of store.comments">
+                            <ion-col col-11>
+                                {{comment.name}}
+                              </ion-col>
+                            <ion-col col-11>
+                                {{comment.comment}}
+                              </ion-col>
+                          </ion-row>
+                          </ion-card-content>
+</ion-card>
+
+              
+</ion-content>

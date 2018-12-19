@@ -34,7 +34,7 @@ openModal(){
 
   CreateobjectPageModal.onDidDismiss(object =>{
   this.op.insertObject(object).subscribe();
-  this.op.loadObjects().subscribe(object => this.objects =Objects);
+  this.op.loadObjects().subscribe(object => this.objects =objects);
 });
 }
 }

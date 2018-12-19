@@ -4,7 +4,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>{{store.name}}</ion-title>
+    <ion-title>{{object.name}}</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -39,21 +39,7 @@
                 </ion-row>
                </ion-card> 
 
-               <ion-card>
-                  <ion-card-content>
-                  <ion-card-title>
-                    Comments
-                  </ion-card-title>
-                          <ion-row *ngFor="let comment of store.comments">
-                            <ion-col col-11>
-                                {{comment.name}}
-                              </ion-col>
-                            <ion-col col-11>
-                                {{comment.comment}}
-                              </ion-col>
-                          </ion-row>
-                          </ion-card-content>
-</ion-card>
+
 
               
 </ion-content>

@@ -1,17 +1,19 @@
 page-create-property {
      
         .content{
-            background-color: rgba(245, 240, 243, 0.555);
-        }
-            .input-md{
-                color: purple            
+            background-color:rgb(201, 107, 158);
+           
+            .label{
+                background-color: rgb(253, 251, 247);
+                color: purple;
+                font-weight: bold
             }
-        
-        .item{
-            background-color: rgba(248, 244, 244, 0.11);
-            color: white;
-            font-weight: bold
+            .button{
+                padding: 5px
+            }
         }
+            
+        
         
         }
         

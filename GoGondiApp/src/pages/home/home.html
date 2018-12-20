@@ -1,15 +1,17 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      GoGondi
-      <img width="60" height="60" src="../assets/imgs/GoGondi.JPG" alt="GoGondi">   
-
+        <img width="50" height="50" align="left" src="../assets/imgs/GoGondi.JPG" alt="GoGondi">   
      </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-
+<ion-list class="Schrift">
+  <ion-item>3-Etagen-Wohnung</ion-item>
+  <ion-item>Doppelhaushälfte</ion-item>
+  <ion-item>Sutterain Wohnung</ion-item>
+</ion-list>
    
 <ion-list>
     <ion-item *ngFor="let property of properties">
@@ -26,7 +28,7 @@
 </ion-content>
   
 <ion-fab bottom right>
-  <button (click)= "openModal()" ion-fab color="grey">+</button>
+  <button (click)= "openModal()" ion-fab color="light">+</button>
 </ion-fab>
 
 

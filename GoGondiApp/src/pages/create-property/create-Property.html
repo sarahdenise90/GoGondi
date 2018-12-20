@@ -1,13 +1,29 @@
-
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>Property</ion-title>
-  </ion-navbar>
-
-</ion-header>
-
-
-<ion-content padding>
-
-</ion-content>
+    <ion-navbar>
+      <ion-title>Property</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  <ion-content padding>
+    <ion-list>
+    <ion-item>
+      <ion-label floating>Name:</ion-label>
+      <ion-input type="text" [(ngModel)]="property.name" name="name"></ion-input>
+    </ion-item>
+      <ion-item>  
+      <ion-label floating>Address</ion-label>
+      <ion-input type="text" (blur)="geocode()" [(ngModel)]="property.address"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Category:</ion-label>
+      <ion-input type="text" [(ngModel)]="property.category" name="category"></ion-input>
+    </ion-item>
+  </ion-list>
+  
+    <button ion-button color="light" icon-only (click)="addProperty()">Add</button>
+    <button ion-button color="danger" icon-only (click)="dismiss()">Close</button>
+  
+  </ion-content>
+  

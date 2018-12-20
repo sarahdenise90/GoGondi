@@ -7,9 +7,9 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { CreateObjectPageModule } from '../pages/create-object/create-object.module';
+import { CreatePropertyPageModule } from '../pages/create-property/create-Property.module';
 import { InfoPageModule } from '../pages/info/info.module';
-import { ObjectProvider } from '../providers/object/object';
+import { PropertyProvider } from '../providers/property/property';
 import { MapProvider } from '../providers/map/map';
 
 @NgModule({
@@ -23,7 +23,7 @@ import { MapProvider } from '../providers/map/map';
     IonicModule.forRoot(MyApp),
     InfoPageModule,
     HttpClientModule,
-    CreateObjectPageModule
+    CreatePropertyPageModule
     
   ],
   bootstrap: [IonicApp],
@@ -35,7 +35,7 @@ import { MapProvider } from '../providers/map/map';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    ObjectProvider,
+    PropertyProvider,
     MapProvider
   ]
 })

@@ -4,7 +4,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>{{object.name}}</ion-title>
+    <ion-title>{{property.name}}</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -14,30 +14,25 @@
       <div id="map"></div>
       <ion-card-content>
       <ion-card-title>
-        {{object.name}}
+        {{property.name}}
       </ion-card-title>
               <ion-row>
                 <ion-col col-1>
                   <ion-icon name="map"></ion-icon>
                 </ion-col>
                 <ion-col col-11>
-                  {{object.address}}
+                  {{property.address}}
                 </ion-col>
               </ion-row>
               </ion-card-content>
               <ion-row>
                 <ion-col align-self-center text-center>
                   <ion-note>
-                    {{object.category}}
+                    {{property.category}}
                   </ion-note>
                 </ion-col>
               </ion-row>
-              <ion-row>
-                  <ion-col align-self-center text-center>
-                      <button (click)= "openModal()" color="primary">Add Comment</button>
-                  </ion-col>
-                </ion-row>
-               </ion-card> 
+            </ion-card>
 
 
 

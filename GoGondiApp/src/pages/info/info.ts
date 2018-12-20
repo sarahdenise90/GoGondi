@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
-import { Object } from '../../models/object'
-import { ObjectProvider } from '../../providers/object/object';
+import { Property } from '../../models/property'
+import { PropertyProvider } from '../../providers/property/property';
 declare var mapboxgl: any;
 
 @IonicPage()
@@ -11,11 +11,11 @@ declare var mapboxgl: any;
 })
 export class InfoPage {
 
-  object: Object;  
+  property: Property;  
 
-  constructor(public navCtrl: NavController, public modalCtrl: ModalController, public navParams: NavParams,public op: ObjectProvider) {
-  this.object = this.navParams.get("name");
-    console.log(this.object);
+  constructor(public navCtrl: NavController, public modalCtrl: ModalController, public navParams: NavParams,public pp: PropertyProvider) {
+  this.property = this.navParams.get("name");
+    console.log(this.property);
     
   }
 
@@ -25,10 +25,10 @@ export class InfoPage {
       container: 'map',
       style: 'mapbox://styles/mapbox/streets-v9',
       zoom: 15,
-      center: this.object.location
+      center: this.property.location
     });
     var marker = new mapboxgl.Marker()
-    .setLngLat(this.object.location)
+    .setLngLat(this.property.location)
     .addTo(map);
   }
 }

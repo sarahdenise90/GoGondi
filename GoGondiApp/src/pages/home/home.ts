@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { Object } from '../../models/object';
+import { Property } from '../../models/property';
 import { NgTemplateOutlet } from '@angular/common';
 import { InfoPage } from '../info/info';
 import { ModalController } from 'ionic-angular';
-import { CreateobjectPage} from '../create-object/create-object'
-import { ObjectProvider } from '../../providers/object/object';
+import { CreatePropertyPage} from '../create-property/create-Property'
+import { PropertyProvider } from '../../providers/property/property';
 
 @Component({
   selector: 'page-home',
@@ -13,28 +13,28 @@ import { ObjectProvider } from '../../providers/object/object';
 })
 export class HomePage {
 
-  objects: Object[]
-  constructor(public navCtrl: NavController, public modalCtrl: ModalController, public op: ObjectProvider) {
+  properties: Property[]
+  constructor(public navCtrl: NavController, public modalCtrl: ModalController, public pp: PropertyProvider) {
 
   }
 //Events (Lifecycle)
   ionViewDidLoad(){
-    this.op.loadObjects().subscribe(x => this.objects= x)   //x = die Rückgabe
+    this.pp.loadProperties().subscribe(x => this.properties= x)   //x = die Rückgabe
   }
 
-toOther(object: Object): void{
+toOther(property: Property): void{
   this.navCtrl.push(InfoPage,{
-    name: object
+    name: property
   });
 }
 
 openModal(){
-  let CreateobjectPageModal = this.modalCtrl.create(CreateobjectPage);
-  CreateobjectPageModal.present();
+  let CreatePropertyPageModal = this.modalCtrl.create(CreatePropertyPage);
+  CreatePropertyPageModal.present();
 
-  CreateobjectPageModal.onDidDismiss(object =>{
-  this.op.insertObject(object).subscribe();
-  this.op.loadObjects().subscribe(object => this.objects =objects);
+  CreatePropertyPageModal.onDidDismiss(property =>{
+  this.pp.insertProperty(property).subscribe();
+  this.pp.loadProperties().subscribe(properties => this.properties =properties);
 });
 }
 }

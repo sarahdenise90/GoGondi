@@ -1,7 +1,7 @@
-export interface Object{
+export interface Property{
     name: string;
     address: string;
     category: string;
-    location: any;
+    location: any
     
 }
